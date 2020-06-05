@@ -16,6 +16,14 @@ then
 		if [[ $mail =~ $pat2 ]]
 		then
         		echo "valid email address, please proceed";
+			read -p "Enter your mobile number = " num
+                	pat3="^[0/91]+(\s)[0-9]{10}$"
+                	if [[ $num =~ $pat3 ]]
+                	then
+                        	echo "valid mobile number, please proceed";
+                	else
+                        	echo "Please enter a valid mobile number";
+                	fi
 		else
         		echo "Please enter a valid email address";
 		fi
