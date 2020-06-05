@@ -22,12 +22,19 @@ then
                 	then
                         	echo "Valid mobile number, please proceed";
 				read -p "Enter your password = " pass
-                        	pat4="^[a-zA-Z0-9]{8,}"
+                        	pat4="^[a-zA-Z0-9@+!#$%&*,._-+^]{8,}"
                         	if [[ $pass =~ $pat4 && "$pass" =~ [[:upper:]] ]]
                         	then
                                 	if [[ "$pass" =~ [[:digit:]] ]]
 					then
-						echo "Valid password, please proceed.."
+						if [[ $pass =~ [@#+_-.,\$\*\!\^%] ]]
+				                then
+                        				echo "User Registration complete"
+							echo "Thank You for registering"
+                				else
+                        				echo "enter atleast one special char"
+                				fi
+
 					else
 						echo "Please enter atleast one digit"
 					fi
@@ -47,6 +54,8 @@ then
 else
 	echo "Please enter a valid First name"
 fi
+
+
 
 
 
