@@ -5,7 +5,15 @@ pat="^[A-Z][a-z]{2,}$"
 
 if [[ $name =~ $pat ]]
 then
-	echo "Valid name, please proceed.."
+	echo "Valid first name, please proceed.."
+	read -p "Enter your Last Name = " lname
+	pat1="^[A-Z][a-z]{2,}$"
+	if [[ $lname =~ $pat1 ]]
+	then
+		echo "Valid Last Name, please proceed..."
+	else
+		echo "Please enter a valid last name"
+	fi
 else
 	echo "Please enter a valid First name"
 fi
