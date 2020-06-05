@@ -20,14 +20,14 @@ then
                 	pat3="^[0/91]+(\s)[0-9]{10}$"
                 	if [[ $num =~ $pat3 ]]
                 	then
-                        	echo "valid mobile number, please proceed";
+                        	echo "Valid mobile number, please proceed";
 				read -p "Enter your password = " pass
-                        	pat4="[a-zA-Z0-9]{8,}$"
-                        	if [[ $pass =~ $pat4 ]]
+                        	pat4="^[a-zA-Z0-9]{8,}"
+                        	if [[ $pass =~ $pat4 && "$pass" =~ [[:upper:]] ]]
                         	then
-                                	echo "valid password, please proceed";
+                                	echo "Valid password, please proceed..";
                         	else
-                                	echo "Please enter atleast 8 characters";
+                                	echo "Please enter atleast 1 upperCase";
                         	fi
 
                 	else
