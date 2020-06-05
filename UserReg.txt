@@ -11,10 +11,20 @@ then
 	if [[ $lname =~ $pat1 ]]
 	then
 		echo "Valid Last Name, please proceed..."
+		read -p "Enter your email address = " mail
+		pat2="^[a-zA-Z0-9]+([.+_-][a-zA-Z0-9]+)*[@][a-z0-9]+([.][a-z]{2,3}){1,2}$"
+		if [[ $mail =~ $pat2 ]]
+		then
+        		echo "valid email address, please proceed";
+		else
+        		echo "Please enter a valid email address";
+		fi
 	else
 		echo "Please enter a valid last name"
 	fi
 else
 	echo "Please enter a valid First name"
 fi
+
+
 
