@@ -25,9 +25,14 @@ then
                         	pat4="^[a-zA-Z0-9]{8,}"
                         	if [[ $pass =~ $pat4 && "$pass" =~ [[:upper:]] ]]
                         	then
-                                	echo "Valid password, please proceed..";
+                                	if [[ "$pass" =~ [[:digit:]] ]]
+					then
+						echo "Valid password, please proceed.."
+					else
+						echo "Please enter atleast one digit"
+					fi
                         	else
-                                	echo "Please enter atleast 1 upperCase";
+                                	echo "Please enter atleast one upperCase";
                         	fi
 
                 	else
