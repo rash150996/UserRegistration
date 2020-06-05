@@ -21,6 +21,15 @@ then
                 	if [[ $num =~ $pat3 ]]
                 	then
                         	echo "valid mobile number, please proceed";
+				read -p "Enter your password = " pass
+                        	pat4="[a-zA-Z0-9]{8,}$"
+                        	if [[ $pass =~ $pat4 ]]
+                        	then
+                                	echo "valid password, please proceed";
+                        	else
+                                	echo "Please enter atleast 8 characters";
+                        	fi
+
                 	else
                         	echo "Please enter a valid mobile number";
                 	fi
