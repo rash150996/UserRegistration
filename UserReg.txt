@@ -17,7 +17,7 @@ then
 		then
         		echo "valid email address, please proceed";
 			read -p "Enter your mobile number = " num
-                	pat3="^[0/91]+(\s)[0-9]{10}$"
+                	pat3="^[0/91]+(\s)?[0-9]{10}$"
                 	if [[ $num =~ $pat3 ]]
                 	then
                         	echo "Valid mobile number, please proceed";
